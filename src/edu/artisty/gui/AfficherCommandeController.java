@@ -1,11 +1,15 @@
 package edu.artisty.gui;
 
+import edu.artisty.entities.Commande;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import java.util.Date;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 
 /**
  * FXML Controller class
@@ -22,17 +26,22 @@ public class AfficherCommandeController implements Initializable {
     private Label prix_tot;
     @FXML
     private Label date;
+    @FXML
     private Label userid;
+    @FXML
+    private Button OK;
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
-    public void setMethPaiment(String meth_paiment) {
+    public void setMeth_Paiment(String meth_paiment) {
         this.meth_paiment.setText(meth_paiment);
     }
 
@@ -44,15 +53,14 @@ public class AfficherCommandeController implements Initializable {
         this.prix_tot.setText(Integer.toString(prix_tot));
     }
 
-    public void setDateCreation(Date date) {
-        this.date.setText(date.toString());
+    public void setDateCreation(String date) {
+        this.date.setText(date);
     }
 
     void setuserid(int userid) {
-            this.userid.setText(Integer.toString(userid));   
-
- 
-    }
+    this.userid.setText(Integer.toString(userid));  
+            
+    }          
 
 
 }

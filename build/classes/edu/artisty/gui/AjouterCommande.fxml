@@ -5,7 +5,10 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -16,16 +19,22 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="280.0" layoutY="355.0" mnemonicParsing="false" onAction="#AjouterCommande" text="OK" />
+      <Button fx:id="ok1" layoutX="280.0" layoutY="355.0" mnemonicParsing="false" onAction="#AjouterCommande" text="OK" />
       <TextField fx:id="tfuserid" layoutX="360.0" layoutY="154.0" />
-      <Label layoutX="43.0" layoutY="108.0" text="L'Id de produit" />
-      <Label layoutX="42.0" layoutY="159.0" text="Votre userId" />
-      <Label fx:id="date" layoutX="43.0" layoutY="210.0" text="La date de création de la commande" />
-      <Label fx:id="meth_paiment" layoutX="45.0" layoutY="260.0" text="La méthode de paiment" />
-      <Label layoutX="41.0" layoutY="307.0" text="Le montant total à payer" />
-      <Label fx:id="idproduit" layoutX="419.0" layoutY="108.0" text="Label" />
+      <Label layoutX="66.0" layoutY="109.0" text="L'Id de produit" />
+      <Label layoutX="66.0" layoutY="159.0" text="Votre userId" />
+      <Label fx:id="date" layoutX="66.0" layoutY="210.0" text="La date de création de la commande" />
+      <Label fx:id="meth_paiment" layoutX="69.0" layoutY="260.0" text="La méthode de paiment" />
+      <Label layoutX="69.0" layoutY="307.0" text="Le montant total à payer" />
       <DatePicker fx:id="DatePicker" layoutX="362.0" layoutY="205.0" />
       <ChoiceBox fx:id="ChoiceBox" layoutX="362.0" layoutY="255.0" prefWidth="150.0" />
-      <Label fx:id="prix_tot" layoutX="420.0" layoutY="307.0" text="Label" />
+      <TextField layoutX="360.0" layoutY="93.0" />
+      <TextField fx:id="prix_tot1" layoutX="360.0" layoutY="302.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#668062" height="400.0" stroke="BLACK" strokeType="INSIDE" width="63.0" />
+      <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="523.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../../../logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

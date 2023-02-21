@@ -38,11 +38,14 @@ public class AjouterCommandeController implements Initializable {
     private TextField tfuserid;
 @FXML 
     private Label meth_paiment; 
-    private Label idproduit;
-    private Label prix_tot;
+@FXML
+    private TextField idproduit;
+    @FXML
+    private TextField prix_tot1;
 
 @FXML 
     private ChoiceBox <String> ChoiceBox;
+
     private final String [] paying_with ={"cash","Card"};
  @FXML
     private DatePicker DatePicker;
@@ -55,21 +58,30 @@ public class AjouterCommandeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ChoiceBox.getItems().addAll(paying_with);
+    	ChoiceBox.setOnAction(this::getamount);
+        
         // TODO
     }
-    
+    	public void getamount(ActionEvent event) {
+		
+		String paying_with = ChoiceBox.getValue();
+		meth_paiment.setText(paying_with);
+	}
 
     @FXML
-    private void AjouterCommande(ActionEvent event) throws IOException {
-        
-        if (tfuserid.getText().isEmpty() || !tfuserid.getText().trim().matches("\\d+") || prix_tot.getText().isEmpty()) {
-            Alert a = new Alert(Alert.AlertType.ERROR, "votre id ou la méthode de paiment est invalide invalide(s)", ButtonType.OK);
-            a.showAndWait();
-        } else {
+    private void AjouterCommande()  {
+        System.out.println(tfuserid.getText());
+        if (tfuserid.getText().isEmpty()  || prix_tot1.getText().isEmpty()) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "votre id est invalide invalide", ButtonType.OK);
+           a.showAndWait();
+        } 
             try {
-                ServiceCommande sc = new ServiceCommande();
                 
-                Commande c = new Commande( Integer.parseInt(tfuserid.getText()), prix_tot.getText());
+                ServiceCommande sc = new ServiceCommande();
+               int i=Integer.valueOf(tfuserid.getText());
+               
+                Commande c = new Commande( i,Integer.valueOf(prix_tot1.getText()));
                 sc.ajouter(c);
                 Alert a = new Alert(Alert.AlertType.INFORMATION, "Commande ajoutée !", ButtonType.OK);
                 a.showAndWait();
@@ -79,26 +91,18 @@ public class AjouterCommandeController implements Initializable {
                 tfuserid.getScene().setRoot(root);
                 
                 AfficherCommandeController acc = loader.getController();
-                acc.setuserid(Integer.parseInt(tfuserid.getText()));
-                acc.setPrix_Tot(Integer.parseInt(prix_tot.getText()));
+                acc.setuserid(Integer.valueOf(tfuserid.getText()));
+                acc.setPrix_Tot(Integer.valueOf(prix_tot1.getText()));
                 
-            } catch (NumberFormatException ex) {
+            } catch (IOException ex) {
                 Alert a = new Alert(Alert.AlertType.ERROR, ex.getMessage(), ButtonType.OK);
                 a.showAndWait();
             }
     
-}
-        ChoiceBox.getItems().addAll(paying_with);
-    	ChoiceBox.setOnAction(this::getamount);
-		
+
 	}
-	
-	public void getamount(ActionEvent event) {
-		
-		String paying_with = ChoiceBox.getValue();
-		meth_paiment.setText(paying_with);
-	}
-        
+
+   
 
     
  public void setIdProduit(int idproduit) {
@@ -107,7 +111,7 @@ public class AjouterCommandeController implements Initializable {
     
     
     public void setPrix_tot(int prix_tot){
-        this.prix_tot.setText(Integer.toString(prix_tot));
+        this.prix_tot1.setText(Integer.toString(prix_tot));
         
     }
 }

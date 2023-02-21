@@ -44,6 +44,11 @@ public class Commande {
         this.payment=payment;
     }
 
+        public Commande(int userid, int prix_tot) {
+        this.userid=userid;
+        this.prix_tot=prix_tot;
+    }
+
     public Commande(int idproduit, int prix_tot, int userid, String payment) {
         this.idproduit = idproduit;
         this.prix_tot = prix_tot;

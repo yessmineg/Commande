@@ -11,13 +11,6 @@ import edu.artisty.services.ServiceCommande;
 import edu.artisty.utils.DataSource;
 import java.io.IOException;
 import java.util.Date;
-import javafx.application.Application;
-import static javafx.application.Application.launch;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
 /**
  *
  * @author yessmine
@@ -51,15 +44,6 @@ public class MainClass {
     // Appeler la méthode printReceipt pour imprimer le reçu
     //receiptPrinter.printReceipt();
     
-//    }
-//    @Override
-//    public void start(Stage primaryStage) throws IOException {
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/ajouter commande.fxml"));
-//        Parent root = loader.load();
-//        Scene scene = new Scene(root);
-//        primaryStage.setScene(scene);
-//        primaryStage.setTitle("Gestion des commandes");
-//        primaryStage.show();
 //    }
 //    
       
