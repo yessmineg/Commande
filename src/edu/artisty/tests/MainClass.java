@@ -1,0 +1,67 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edu.artisty.tests;
+
+import edu.artisty.entities.Commande;
+import edu.artisty.services.ReceiptPrinter;
+import edu.artisty.services.ServiceCommande;
+import edu.artisty.utils.DataSource;
+import java.io.IOException;
+import java.util.Date;
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+/**
+ *
+ * @author yessmine
+ */
+public class MainClass {
+    
+    public static void main(String[] args) {
+  
+//    launch(args);  
+    Commande c1 = new Commande(50,2,"carte");
+    Commande c2 = new Commande (6,70,30,"cash");
+                
+        ServiceCommande sc = new ServiceCommande();
+        sc.supprimer(5);
+    } 
+    }
+
+  //  String receiptText = "-------------------------\n" +
+//                         "REÇU\n" +
+//                         "-------------------------\n" +
+//                         "Article 1\t$10.00\n" +
+//                         "Article 2\t$15.00\n" +
+//                         "Article 3\t$20.00\n" +
+//                         "-------------------------\n" +
+//                         "TOTAL\t$45.00\n" +
+//                         "-------------------------";
+
+    // Créer une instance de ReceiptPrinter avec le texte du reçu
+   // ReceiptPrinter receiptPrinter = new ReceiptPrinter(receiptText);
+
+    // Appeler la méthode printReceipt pour imprimer le reçu
+    //receiptPrinter.printReceipt();
+    
+//    }
+//    @Override
+//    public void start(Stage primaryStage) throws IOException {
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/ajouter commande.fxml"));
+//        Parent root = loader.load();
+//        Scene scene = new Scene(root);
+//        primaryStage.setScene(scene);
+//        primaryStage.setTitle("Gestion des commandes");
+//        primaryStage.show();
+//    }
+//    
+      
+    
+
